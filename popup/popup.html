@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小黑盒体验设置</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header><h1>扩展设置</h1></header>
+
+  <main>
+    <section class="settings-group" aria-label="常规">
+      <label class="setting-row" for="enabled">
+        <span class="setting-copy">
+          <strong>启用扩展</strong>
+          <small>统一管理小黑盒社区增强功能</small>
+        </span>
+        <span class="switch-control">
+          <input id="enabled" type="checkbox" role="switch" checked>
+          <span class="switch-track" aria-hidden="true"></span>
+        </span>
+      </label>
+    </section>
+
+    <section class="settings-group" aria-label="帖子">
+      <label class="setting-row" for="open-mode">
+        <strong>帖子打开方式</strong>
+        <span class="select-control">
+          <select id="open-mode" name="open-mode">
+            <option value="foreground">前台新标签</option>
+            <option value="background">后台新标签</option>
+            <option value="native">网站原生</option>
+          </select>
+        </span>
+      </label>
+      <label class="setting-row" for="return-to-source">
+        <span class="setting-copy">
+          <strong>关闭帖子后返回列表</strong>
+          <small>回到打开帖子的来源标签页</small>
+        </span>
+        <span class="switch-control">
+          <input id="return-to-source" type="checkbox" role="switch" checked>
+          <span class="switch-track" aria-hidden="true"></span>
+        </span>
+      </label>
+    </section>
+
+    <section class="settings-group" aria-label="图片">
+      <label class="setting-row" for="image-viewer">
+        <span class="setting-copy">
+          <strong>图片查看器</strong>
+          <small>点击帖子图片时在当前页预览</small>
+        </span>
+        <span class="switch-control">
+          <input id="image-viewer" type="checkbox" role="switch" checked>
+          <span class="switch-track" aria-hidden="true"></span>
+        </span>
+      </label>
+      <label class="setting-row" for="multi-image-completion">
+        <span class="setting-copy">
+          <strong>自动补全多图</strong>
+          <small>开启图片查看器后，补入第 4 张及后续图片</small>
+        </span>
+        <span class="switch-control">
+          <input id="multi-image-completion" type="checkbox" role="switch" checked>
+          <span class="switch-track" aria-hidden="true"></span>
+        </span>
+      </label>
+    </section>
+
+    <section class="settings-group" aria-label="评论">
+      <label class="setting-row" for="comment-mode">
+        <strong>评论打开方式</strong>
+        <span class="select-control">
+          <select id="comment-mode" name="comment-mode">
+            <option value="popup">当前页弹窗</option>
+            <option value="native">网站原生</option>
+          </select>
+        </span>
+      </label>
+    </section>
+
+    <section class="settings-group" aria-label="恢复设置">
+      <button class="setting-row reset-button" id="reset-settings" type="button">
+        <strong>恢复默认设置</strong>
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor"
+             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 5v4h4M4.5 8.5a6 6 0 1 1 .5 5.1"/>
+        </svg>
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand">
+      <img src="../icons/xhh.svg" width="18" height="18" alt="">
+      <span>小黑盒体验优化</span>
+      <span class="version" id="version"></span>
+    </div>
+    <p id="save-status" class="save-status" role="status"></p>
+  </footer>
+
+  <script src="../src/settings.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <title>XHH</title>
+  <rect x="2" y="2" width="124" height="124" rx="26" fill="#eff1f2"/>
+  <defs>
+    <path id="side" d="M16 40 30 32v24h11V26l8-5v24l11 19-11 19v24l-8-5V74H30v22l-14-8Z"/>
+    <path id="cap" d="m55 19 9-5 9 5v25l-9 14-9-14Z"/>
+  </defs>
+  <g fill="#181c20">
+    <use href="#side"/>
+    <use href="#side" transform="rotate(180 64 64)"/>
+  </g>
+  <g fill="#373d43">
+    <use href="#cap"/>
+    <use href="#cap" transform="rotate(180 64 64)"/>
+  </g>
+</svg>

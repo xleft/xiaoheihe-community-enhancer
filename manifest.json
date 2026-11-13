@@ -1,0 +1,71 @@
+{
+  "manifest_version": 3,
+  "name": "小黑盒社区体验优化",
+  "version": "0.7.2",
+  "description": "可配置帖子新标签、图片 Viewer、多图补全与评论弹窗的小黑盒体验优化。",
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://xiaoheihe.cn/*",
+    "https://www.xiaoheihe.cn/*"
+  ],
+  "background": {
+    "service_worker": "src/service-worker.js"
+  },
+  "action": {
+    "default_title": "小黑盒体验设置",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/xhh-16.png",
+      "32": "icons/xhh-32.png",
+      "48": "icons/xhh-48.png",
+      "128": "icons/xhh-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://xiaoheihe.cn/*",
+        "https://www.xiaoheihe.cn/*"
+      ],
+      "js": [
+        "src/page-feed-bridge.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://xiaoheihe.cn/*",
+        "https://www.xiaoheihe.cn/*"
+      ],
+      "js": [
+        "src/decision.js",
+        "src/native-interactions.js",
+        "src/settings.js",
+        "src/content.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://xiaoheihe.cn/app/bbs/*",
+        "https://www.xiaoheihe.cn/app/bbs/*"
+      ],
+      "js": [
+        "src/native-interactions.js",
+        "src/frame-content.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icons/xhh-16.png",
+    "32": "icons/xhh-32.png",
+    "48": "icons/xhh-48.png",
+    "128": "icons/xhh-128.png"
+  }
+}

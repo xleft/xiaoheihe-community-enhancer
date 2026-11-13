@@ -1,0 +1,235 @@
+:root {
+  color-scheme: light;
+  --background: #f4f6f7;
+  --surface: #fff;
+  --text: #181c20;
+  --muted: #6a7076;
+  --line: #f2f3f4;
+  --switch-off: #edeff0;
+  --error: #a32c32;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 380px;
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font: 14px/1.45 "Microsoft YaHei UI", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+}
+
+header {
+  display: grid;
+  min-height: 52px;
+  place-items: center;
+  background: var(--surface);
+}
+
+h1 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+main {
+  display: grid;
+  gap: 8px;
+  padding: 10px 11px 0;
+}
+
+.settings-group {
+  padding: 0 12px;
+  border-radius: 9px;
+  background: var(--surface);
+}
+
+.setting-row {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 0;
+  cursor: pointer;
+}
+
+.setting-row + .setting-row {
+  border-top: 1px solid var(--line);
+}
+
+.setting-copy {
+  min-width: 0;
+}
+
+.setting-row strong {
+  display: block;
+  font-weight: 600;
+}
+
+.setting-row small {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.switch-control,
+.select-control {
+  position: relative;
+  flex: none;
+}
+
+.switch-control input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.switch-track {
+  display: block;
+  width: 42px;
+  height: 19px;
+  border-radius: 999px;
+  background: var(--switch-off);
+  transition: background-color .14s ease;
+}
+
+.switch-track::after {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 23px;
+  height: 15px;
+  border-radius: 999px;
+  background: var(--surface);
+  content: "";
+  transition: transform .14s ease;
+}
+
+.switch-control input:checked + .switch-track {
+  background: var(--text);
+}
+
+.switch-control input:checked + .switch-track::after {
+  transform: translateX(15px);
+}
+
+.select-control {
+  margin-right: -4px;
+}
+
+.select-control::after {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  width: 6px;
+  height: 6px;
+  border-top: 1.5px solid #999fa5;
+  border-right: 1.5px solid #999fa5;
+  content: "";
+  pointer-events: none;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+select {
+  width: 116px;
+  min-height: 30px;
+  padding: 2px 17px 2px 3px;
+  appearance: none;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  text-align: right;
+}
+
+select option {
+  color: var(--text);
+}
+
+select:hover:enabled {
+  background: var(--background);
+}
+
+.setting-row.disabled {
+  opacity: .52;
+  cursor: default;
+}
+
+select:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.reset-button {
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+}
+
+.reset-button svg {
+  flex: none;
+  color: #858c92;
+}
+
+.reset-button:hover strong {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.switch-control input:focus-visible + .switch-track,
+select:focus-visible,
+.reset-button:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+footer {
+  padding: 10px 11px 7px;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.brand img {
+  opacity: .68;
+}
+
+.version {
+  margin-left: 3px;
+  font-variant-numeric: tabular-nums;
+}
+
+.save-status {
+  min-height: 16px;
+  margin: 2px 0 0;
+}
+
+.save-status.error {
+  color: var(--error);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .switch-track,
+  .switch-track::after {
+    transition: none;
+  }
+}
