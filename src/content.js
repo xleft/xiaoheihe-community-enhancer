@@ -63,7 +63,7 @@
       .xhh-gallery-overlay {
         animation: xhh-gallery-fade-in .12s ease-out;
         background: rgba(5, 7, 11, .78);
-        backdrop-filter: blur(2px);
+        /* Avoid full-screen backdrop filtering over animated list content. */
         inset: 0;
         position: fixed;
         z-index: 2147483647;

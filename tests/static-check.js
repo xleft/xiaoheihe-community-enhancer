@@ -18,7 +18,7 @@ const popupHtml = popupExists
   ? fs.readFileSync(path.join(root, 'popup', 'popup.html'), 'utf8')
   : '';
 
-assert.equal(manifest.version, '0.7.2');
+assert.equal(manifest.version, '0.7.3');
 assert.equal(manifest.manifest_version, 3);
 assert.equal(manifest.permissions.includes('scripting'), false);
 assert.equal(manifest.host_permissions.includes('https://api.xiaoheihe.cn/*'), false);

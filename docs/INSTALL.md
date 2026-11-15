@@ -5,7 +5,7 @@
 ## 首次安装
 
 1. 打开 https://github.com/xleft/xiaoheihe-community-enhancer/releases/latest 。
-2. 展开 **Assets**，下载 `xiaoheihe-community-enhancer-0.7.2.zip`。`Source code (zip)` 是 GitHub 自动打包的整个源码仓库，新用户优先选择上述安装包。
+2. 展开 **Assets**，下载 `xiaoheihe-community-enhancer-0.7.3.zip`。`Source code (zip)` 是 GitHub 自动打包的整个源码仓库，新用户优先选择上述安装包。
 3. 解压到长期保留的目录，例如自己创建的“浏览器扩展/小黑盒体验优化”文件夹。不要直接在压缩包预览窗口里安装。
 4. 进入解压文件夹，确认直接能看到 `manifest.json`、`src`、`popup`、`icons`。
 5. 在 Chrome 地址栏输入 `chrome://extensions` 并回车。

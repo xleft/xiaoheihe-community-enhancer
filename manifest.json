@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "小黑盒社区体验优化",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "可配置帖子新标签、图片 Viewer、多图补全与评论弹窗的小黑盒体验优化。",
   "permissions": [
     "tabs",
